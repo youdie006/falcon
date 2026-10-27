@@ -396,7 +396,7 @@ def parse_query_string(
     # both short and long query strings. Tested on CPython 3.4.
     for field in query_string.split('&'):
         k, _, v = field.partition('=')
-        if not v and (not keep_blank or not k):
+        if not v and (not keep_blank or not field):
             continue
 
         # Note(steffgrez): Falcon first decode name parameter for handle

@@ -479,6 +479,8 @@ class TestFalconUtils:
             ('flag1&&&&&flag2&&&', False, {}),
             ('malformed=%FG%1%Hi%%%a', False, {'malformed': '%FG%1%Hi%%%a'}),
             ('=', False, {}),
+            ('=', True, {'': ''}),
+            ('a=1&=&b=', True, {'a': '1', '': '', 'b': ''}),
             ('==', False, {'': '='}),
             (
                 '%==+==&&&&&&&&&%%==+=&&&&&&%0g%=%=',
